@@ -136,7 +136,7 @@ void Student::ausgabe(std::ostream& out) const
  *
  * @param out Die Referenz zum std::cout.
  * @param student Das Student-Objekt, das an den Konsol geprintet werden wird.
- * @return Eine Referenz zum std::cout. Damit kann man mahr als eine Ausgabe verketten.
+ * @return Eine Referenz zum std::cout. Damit kann man mehr als eine Ausgabe verketten.
  */
 std::ostream& operator << (std::ostream& out, const Student& student)
 {

@@ -90,8 +90,7 @@ int main()
                     {
                     	studentenListeIterator = studentenListe.begin();
                         student = *studentenListeIterator;
-                        std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
-                        student.ausgabe();
+                        std::cout << "Der folgende Student ist geloescht worden:" << std::endl << &student;
                         studentenListe.erase(studentenListe.begin());
                     }
                     else
@@ -108,7 +107,7 @@ int main()
                     std::cout << "Inhalt der Liste in fortlaufender Reihenfolge:" << std::endl;
                     for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end(); it++)
                     {
-                    	it->ausgabe();
+                    	it->ausgabe(std::cout);
                     }
                 }
                 else
@@ -123,7 +122,7 @@ int main()
             		std::cout << "Inhalt der Liste in umgekehrter Reihenfolge Reihenfolge:" << std::endl;
             		for(std::vector<Student>::reverse_iterator it = studentenListe.rbegin(); it != studentenListe.rend(); it++)
             		{
-            			it->ausgabe();
+            			it->ausgabe(std::cout);
             		}
                 }
                 else
@@ -190,8 +189,7 @@ int main()
                     {
                     	studentenListeIterator = studentenListe.begin();
                         student = *studentenListeIterator;
-                        std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
-                        student.ausgabe();
+                        std::cout << "Der folgende Student ist geloescht worden:" << std::endl << &student;
                         studentenListe.erase(studentenListe.begin());
                     }
                     else
@@ -205,7 +203,7 @@ int main()
             		std::string dateiName = "";
 
             		std::cout << "Aus welcher Datei sollte die Daten eingelesen werden?\n";
-            		getline(std::cin ,dateiName);
+            		getline(std::cin, dateiName);
 
             		std::cout << "Einlesen beginnt.\n";
 
