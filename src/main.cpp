@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include<fstream>
+#include<algorithm>
 #include <string>
 #include <vector>
 
@@ -47,7 +48,7 @@ int main()
 				  << "(4): Datenbank in umgekehrter Reihenfolge ausgeben" << std::endl //--
 				  << "(5): Datenelement loeschen" << std::endl
 				  << "(6): Datenelement vorne hinzufuegen" << std::endl
-				  << "(7): Datenelement vorne loeschen" << std::endl
+				  << "(7): Datenbank in sortierter Reihenfolge ausgeben" << std::endl
 				  << "(8): Daten aus einer Datei einlesen" << std::endl
 				  << "(9): Daten in eine Datei sichern" << std::endl
                   << "(0): Beenden" << std::endl;
@@ -185,16 +186,11 @@ int main()
             	break;
             case '7':
                 {
-                    if(!studentenListe.empty())
+                    std::sort(studentenListe.begin(), studentenListe.end());
+
+                    for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end(); it++)
                     {
-                    	studentenListeIterator = studentenListe.begin();
-                        student = *studentenListeIterator;
-                        std::cout << "Der folgende Student ist geloescht worden:" << std::endl << &student;
-                        studentenListe.erase(studentenListe.begin());
-                    }
-                    else
-                    {
-                        std::cout << "Die Liste ist leer!\n";
+                    	it->ausgabe(std::cout);
                     }
                 }
                 break;
