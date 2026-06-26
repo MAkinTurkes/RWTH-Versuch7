@@ -123,9 +123,33 @@ std::string Student::getAdresse() const
 /**
  * @brief Gibt alle Daten des Studenten in einer Zeile aus
  */
-void Student::ausgabe() const
+void Student::ausgabe(std::ostream& out) const
 {
-    std::cout << name << ", MatNr. " << matNr << ", geb. am "
+    out << name << ", MatNr. " << matNr << ", geb. am "
               << geburtstag << ", wohnhaft in " << adresse
               << std::endl;
 }
+
+
+/**
+ * @brief Ueberladung vom Operator << fuer ostream, sodass Student-Objekte direkt bei der Ausgabe benutzt werden (z.B. std::cout << student).
+ *
+ * @param out Die Referenz zum std::cout.
+ * @param student Das Student-Objekt, das an den Konsol geprintet werden wird.
+ * @return Eine Referenz zum std::cout. Damit kann man mahr als eine Ausgabe verketten.
+ */
+std::ostream& operator << (std::ostream& out, const Student& student)
+{
+	student.ausgabe(out);
+
+	return out;
+}
+
+
+
+
+
+
+
+
+
