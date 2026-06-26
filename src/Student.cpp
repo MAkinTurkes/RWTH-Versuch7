@@ -23,6 +23,63 @@ matNr(matNr), name(name), geburtstag(geburtstag), adresse(adresse)
 Student::Student() : matNr(0), name(""), geburtstag(""), adresse("")
 { }
 
+
+/**
+ * @brief Ueberladung vom Operator == fuer die Vergleichung der Nummern von zwei Student-Klassen.
+ *
+ * @param student Das Objekt, mit dem das erste Objekt verglichen wird.
+ * @return Gibt true zurueck, falls die Matrikelnummern von den verglichenen Student-Objekten gleich sind, sonst false.
+ */
+bool Student::operator == (const Student& student)
+{
+	if(matNr == student.getMatNr())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+/**
+ * @brief Ueberladung vom Operator < fuer die Vergleichung der Nummern von zwei Student-Klassen.
+ *
+ * @param student Das Objekt, mit dem das erste Objekt verglichen wird.
+ * @return Gibt true zurueck, falls die Matrikelnummer vom ersten Objekt kleiner als die Matrikelnummer vom zweiten Objekt ist, sonst false.
+ */
+bool Student::operator < (const Student& student)
+{
+	if(matNr < student.getMatNr())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+/**
+ * @brief Ueberladung vom Operator > fuer die Vergleichung der Nummern von zwei Student-Klassen.
+ *
+ * @param student Das Objekt, mit dem das erste Objekt verglichen wird.
+ * @return Gibt true zurueck, falls die Matrikelnummer vom ersten Objekt groesser als die Matrikelnummer vom zweiten Objekt ist, sonst false.
+ */
+bool Student::operator > (const Student& student)
+{
+	if(matNr > student.getMatNr())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 /**
  * @brief Gibt die Matrikelnummer des Studenten zurueck
  *
