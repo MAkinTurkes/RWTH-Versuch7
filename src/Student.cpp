@@ -42,6 +42,13 @@ bool Student::operator == (const Student& student)
 	}
 }
 
+
+/**
+ * @brief Ueberladung vom Operator == fuer die Vergleichung der Matrikelnummer des Studentenobjekts mit der gegebenen Matrikelnummer.
+ *
+ * @param vergleichNummer Die Matrikelnummer, mit der die Matrikelnummer des Objekts verglichen wird.
+ * @return Gibt true zurueck, falls die Matrikelnummer des Objekts gleich die gegebene Matrikelnummer ist, sonst false.
+ */
 bool Student::operator == (const unsigned int vergleichNummer)
 {
 	if(this->matNr == vergleichNummer)
