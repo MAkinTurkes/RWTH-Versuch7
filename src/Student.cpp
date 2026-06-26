@@ -32,7 +32,19 @@ Student::Student() : matNr(0), name(""), geburtstag(""), adresse("")
  */
 bool Student::operator == (const Student& student)
 {
-	if(matNr == student.getMatNr())
+	if(this->matNr == student.getMatNr())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool Student::operator == (const unsigned int vergleichNummer)
+{
+	if(this->matNr == vergleichNummer)
 	{
 		return true;
 	}

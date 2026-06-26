@@ -137,22 +137,29 @@ int main()
             		std::cout << "Geben Sie die Matrikelnummer, die dem Student gehoert." << std::endl;
             		std::cin >> matNr;
 
-            		if(studentenListe.empty())
+            		std::vector<Student>::iterator studentZumLoeschen = std::find(studentenListe.begin(), studentenListe.end(), matNr);
+
+            		if(studentZumLoeschen == studentenListe.end() && studentZumLoeschen->getMatNr() != matNr)
             		{
-            			std::cout << "Die Liste ist leer!\n\n";
+            			std::cout << "Es gibt keinen Student mit der gegebenen Nummer!" << std::endl;
             		}
             		else
             		{
-            			for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end();)
+            			studentenListe.erase(studentZumLoeschen);
+
+            			std::cout << "Der Student mit der gegebenen Matrikelnummer wurde geloescht." << std::endl
+            					<< "Die neue Liste sieht so aus:" << std::endl << std::endl;
+
+            			if(!studentenListe.empty())
             			{
-            				if(it->getMatNr() == matNr)
+            				for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end(); it++)
             				{
-            					studentenListe.erase(it);
+            					it->ausgabe(std::cout);
             				}
-            				else
-            				{
-            					it++;
-            				}
+            			}
+            			else
+            			{
+            				std::cout << "Die Liste ist leer!\n\n";
             			}
             		}
         		}

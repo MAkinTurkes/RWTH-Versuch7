@@ -13,6 +13,7 @@ public:
     Student();
     Student(unsigned int matNr, std::string name, std::string geburtstag, std::string address);
     bool operator == (const Student& student);
+    bool operator == (const unsigned int vergleichNummer);
     bool operator < (const Student& student);
     bool operator > (const Student& student);
     unsigned int getMatNr() const;
