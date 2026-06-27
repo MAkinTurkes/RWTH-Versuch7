@@ -108,7 +108,7 @@ int main()
                     std::cout << "Inhalt der Liste in fortlaufender Reihenfolge:" << std::endl;
                     for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end(); it++)
                     {
-                    	it->ausgabe(std::cout);
+                    	std::cout << *it << std::endl;
                     }
                 }
                 else
@@ -123,7 +123,7 @@ int main()
             		std::cout << "Inhalt der Liste in umgekehrter Reihenfolge Reihenfolge:" << std::endl;
             		for(std::vector<Student>::reverse_iterator it = studentenListe.rbegin(); it != studentenListe.rend(); it++)
             		{
-            			it->ausgabe(std::cout);
+            			std::cout << *it << std::endl;
             		}
                 }
                 else
@@ -154,7 +154,7 @@ int main()
             			{
             				for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end(); it++)
             				{
-            					it->ausgabe(std::cout);
+            					std::cout << *it << std::endl;
             				}
             			}
             			else
@@ -197,7 +197,7 @@ int main()
 
                     for(std::vector<Student>::iterator it = studentenListe.begin(); it != studentenListe.end(); it++)
                     {
-                    	it->ausgabe(std::cout);
+                    	std::cout << *it << std::endl;
                     }
                 }
                 break;
